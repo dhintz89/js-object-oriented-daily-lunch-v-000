@@ -117,6 +117,8 @@ class Neighborhood {
   meals() {
     return this.deliveries().map(function(delivery) {
       return delivery.meal();
+    }).filter(function(item, i, ar){
+      return ar.indexOf(item) === i;
     });
   }
 }
