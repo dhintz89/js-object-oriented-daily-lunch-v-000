@@ -109,9 +109,9 @@ class Neighborhood {
   }
   
   customers() {
-    return this.deliveries().map(function(delivery) {
-      return delivery.customer();
-    });
+    return store.customers.filter(function(customer) {
+      return customer.neighborhoodId === this.id;
+    }.bind(this));
   }
   
   meals() {
